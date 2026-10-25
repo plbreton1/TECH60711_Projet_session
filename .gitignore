@@ -4,3 +4,5 @@ __pycache__/
 copilote/data/
 faux_boss/data/notes_ecrites/
 evaluation/resultats.json
+
+transcription/modeles/

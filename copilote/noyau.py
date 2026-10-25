@@ -50,7 +50,9 @@ def inventaire_sources(dossier: dict) -> dict:
         sources[c["id"]] = f"Courriel du {c['date']} ({c['de']}, « {c['objet']} ») : {c['corps']}"
     for t in dossier.get("transcriptions", []):
         for tour in t["tours"]:
-            sources[tour["id"]] = f"Appel du {t['date']}, {tour['locuteur']} : {tour['texte']}"
+            moment = f" ({int(tour['debut']) // 60:02d}:{int(tour['debut']) % 60:02d})" if "debut" in tour else ""
+            qui = f", {tour['locuteur']}" if tour.get("locuteur") else ""
+            sources[tour["id"]] = f"Appel du {t['date']}{moment}{qui} : {tour['texte']}"
     return sources
 
 
@@ -93,11 +95,13 @@ def valider(resultat: dict, dossier: dict) -> dict:
     """Ajoute à chaque élément les sources invalides et un drapeau « non_source »."""
     _, points, _ = charger_config()
     sources = inventaire_sources(dossier)
-    codes = {p["code"] for p in points["points"]}
+    libelles = {p["code"]: p["libelle"] for p in points["points"]}
+    codes = set(libelles)
     for cle in ("signalements", "points_attention", "note"):
         resultat[cle] = [_controler(e, sources) for e in resultat.get(cle, [])]
     for p in resultat["points_attention"]:
         p["hors_liste"] = p.get("code") not in codes
+        p["libelle"] = libelles.get(p.get("code"), p.get("code"))
     resultat["resume"] = _controler(resultat.get("resume") or {"texte": "", "sources": []}, sources)
     elements = resultat["signalements"] + resultat["points_attention"] + resultat["note"] + [resultat["resume"]]
     resultat["controles"] = {
