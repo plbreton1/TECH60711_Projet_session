@@ -1,0 +1,47 @@
+{
+  "dossier": "D-001",
+  "_note": "Écarts plantés volontairement dans le dossier synthétique. Ce fichier n'est JAMAIS servi au copilote : il sert seulement à l'évaluation. La correspondance se fait sur le champ ; le type est indicatif.",
+  "signalements": [
+    {
+      "id": "E1",
+      "type": "contradiction",
+      "champ": "mise_de_fonds",
+      "description": "Provenance : épargnes au formulaire, don partiel de 15 000 $ selon le courriel C1"
+    },
+    {
+      "id": "E2",
+      "type": "manquant",
+      "champ": "document:lettre_de_don",
+      "description": "Lettre de don des parents absente"
+    },
+    {
+      "id": "E3",
+      "type": "contradiction",
+      "champ": "emploi",
+      "description": "Changement d'employeur annoncé à l'appel (Clinique Boréale, 1er décembre)"
+    },
+    {
+      "id": "E6",
+      "type": "contradiction",
+      "champ": "revenus",
+      "description": "Revenu de 78 000 $ au formulaire, environ 82 000 $ avec le nouvel emploi (T1-03)"
+    },
+    {
+      "id": "E4",
+      "type": "manquant",
+      "champ": "document:lettre_emploi",
+      "description": "Lettre d'emploi du nouvel employeur absente"
+    },
+    {
+      "id": "E5",
+      "type": "contradiction",
+      "champ": "passifs",
+      "description": "Carte de crédit (solde ~6 000 $) non déclarée au formulaire"
+    }
+  ],
+  "points_attention": [
+    "stabilite_emploi",
+    "provenance_mise_de_fonds",
+    "passifs_non_declares"
+  ]
+}

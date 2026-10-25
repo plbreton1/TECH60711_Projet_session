@@ -1,0 +1,10 @@
+{
+  "_note": "Liste PROVISOIRE des points d'attention pour le résumé au souscripteur. À valider avec des souscripteurs. Ce sont des faits à mettre de l'avant, pas une estimation du risque.",
+  "points": [
+    { "code": "stabilite_emploi", "libelle": "Stabilité de l'emploi", "quand": "Changement d'employeur récent ou annoncé, période de probation, emploi de moins d'un an." },
+    { "code": "type_revenu", "libelle": "Type de revenu", "quand": "Revenu de travailleur autonome, à commission, variable ou saisonnier." },
+    { "code": "provenance_mise_de_fonds", "libelle": "Provenance de la mise de fonds", "quand": "Don, prêt, REER, vente d'actif ou toute source autre que l'épargne documentée." },
+    { "code": "passifs_non_declares", "libelle": "Passifs non déclarés", "quand": "Dette mentionnée dans les échanges mais absente du formulaire." },
+    { "code": "propriete_particuliere", "libelle": "Propriété particulière", "quand": "Usage locatif, plusieurs logements, propriété atypique." }
+  ]
+}

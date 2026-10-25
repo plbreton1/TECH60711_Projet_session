@@ -1,0 +1,19 @@
+services:
+  faux-boss:
+    build: ./faux_boss
+    ports: ["8001:8001"]
+  copilote:
+    build: ./copilote
+    env_file: .env
+    environment:
+      BOSS_URL: http://faux-boss:8001
+      DATA_DIR: /app/data
+    volumes: ["./copilote/data:/app/data"]
+    ports: ["8000:8000"]
+    depends_on: [faux-boss]
+  interface:
+    build: ./interface
+    environment:
+      COPILOTE_URL: http://copilote:8000
+    ports: ["8501:8501"]
+    depends_on: [copilote]

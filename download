@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+copilote/data/
+faux_boss/data/notes_ecrites/
+evaluation/resultats.json

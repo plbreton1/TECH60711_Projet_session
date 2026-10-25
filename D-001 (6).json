@@ -1,0 +1,63 @@
+{
+  "id": "D-001",
+  "statut": "En préparation",
+  "conseiller": "Conseiller test",
+  "formulaire": {
+    "emprunteur": {
+      "nom": "Marie-Ève Tremblay (fictive)",
+      "date_naissance": "1990-04-12",
+      "etat_civil": "Célibataire",
+      "personnes_a_charge": 0
+    },
+    "emploi": {
+      "employeur": "Centre de santé Haut-Bois (fictif)",
+      "poste": "Infirmière clinicienne",
+      "type_revenu": "Salariée permanente",
+      "depuis": "2019-08"
+    },
+    "revenus": {
+      "revenu_annuel_brut": 78000
+    },
+    "propriete": {
+      "adresse": "123, rue des Érables, Sherbrooke (fictive)",
+      "type": "Maison unifamiliale",
+      "usage": "Occupation par le propriétaire",
+      "prix_achat": 425000
+    },
+    "mise_de_fonds": {
+      "montant": 42500,
+      "provenance": "Épargnes personnelles"
+    },
+    "passifs": [
+      { "type": "Prêt auto", "paiement_mensuel": 450, "solde": 14200 }
+    ]
+  },
+  "produit_demande": {
+    "type": "Prêt hypothécaire à l'achat",
+    "terme": "5 ans fixe",
+    "amortissement_ans": 25,
+    "montant_demande": 382500
+  },
+  "notes_anterieures": [
+    { "id": "N1", "date": "2026-10-02", "auteur": "Conseiller test",
+      "texte": "Premier contact. Préqualification faite. La cliente vise un achat à Sherbrooke cet automne." }
+  ],
+  "documents_deposes": [
+    { "id": "D1", "type": "talon_de_paie", "date": "2026-10-10", "description": "Talon de paie, Centre de santé Haut-Bois" },
+    { "id": "D2", "type": "avis_de_cotisation", "date": "2026-05-01", "description": "Avis de cotisation 2025" }
+  ],
+  "courriels": [
+    { "id": "C1", "date": "2026-10-14", "de": "Cliente", "objet": "Documents pour ma demande",
+      "corps": "Bonjour, je vous envoie mon talon de paie et mon avis de cotisation. Pour la mise de fonds, je voulais préciser que 15 000 $ viennent d'un don de mes parents, le reste vient de mes épargnes. Merci !" }
+  ],
+  "transcriptions": [
+    { "id": "T1", "date": "2026-10-16", "type": "appel_client", "consentement_enregistrement": true,
+      "tours": [
+        { "id": "T1-01", "locuteur": "Conseiller", "texte": "Merci pour les documents. Est-ce que votre situation d'emploi a changé depuis la préqualification ?" },
+        { "id": "T1-02", "locuteur": "Cliente", "texte": "Oui, j'ai accepté un poste dans une clinique privée, la Clinique Boréale. Je commence le 1er décembre, avec une période de probation de trois mois." },
+        { "id": "T1-03", "locuteur": "Cliente", "texte": "Le salaire est meilleur, environ 82 000 $ par année." },
+        { "id": "T1-04", "locuteur": "Conseiller", "texte": "Avez-vous d'autres dettes que le prêt auto ?" },
+        { "id": "T1-05", "locuteur": "Cliente", "texte": "J'ai une carte de crédit avec un solde d'environ 6 000 $, je paie à peu près 200 $ par mois." }
+      ] }
+  ]
+}
