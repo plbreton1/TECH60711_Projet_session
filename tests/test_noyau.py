@@ -22,6 +22,11 @@ class TestNoyau(unittest.TestCase):
         self.assertTrue(source_valide("T1", s))         # transcription entière
         self.assertFalse(source_valide("C9", s))
 
+    def test_appel_horodate(self):
+        d = json.loads(json.dumps(DOSSIER))
+        d["transcriptions"].append({"id": "T2", "date": "2026-10-20", "tours": [{"id": "T2-01", "debut": 92.4, "texte": "Bonjour"}]})
+        self.assertEqual(inventaire_sources(d)["T2-01"], "Appel du 2026-10-20 (01:32) : Bonjour")
+
     def test_attendus_jamais_dans_le_prompt(self):
         texte = json.dumps(construire_messages(DOSSIER), ensure_ascii=False)
         self.assertNotIn("E1", texte.replace("Érables", ""))

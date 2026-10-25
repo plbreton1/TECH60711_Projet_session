@@ -2,15 +2,22 @@ services:
   faux-boss:
     build: ./faux_boss
     ports: ["8001:8001"]
+  transcription:
+    build: ./transcription
+    environment:
+      WHISPER_MODEL: ${WHISPER_MODEL:-small}
+    volumes: ["./transcription/modeles:/root/.cache/huggingface"]
+    ports: ["8002:8002"]
   copilote:
     build: ./copilote
     env_file: .env
     environment:
       BOSS_URL: http://faux-boss:8001
+      TRANSCRIPTION_URL: http://transcription:8002
       DATA_DIR: /app/data
     volumes: ["./copilote/data:/app/data"]
     ports: ["8000:8000"]
-    depends_on: [faux-boss]
+    depends_on: [faux-boss, transcription]
   interface:
     build: ./interface
     environment:
